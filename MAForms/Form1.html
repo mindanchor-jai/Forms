@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind Anchor Forms</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=EB+Garamond:wght@400;500&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root{
+            --bg:#080d1c;
+            --bg2:#0c1430;
+            --panel:#101a3a;
+            --border:#243158;
+
+            --gold:#c9a24b;
+            --gold-soft:#e2c785;
+
+            --text:#eae6d9;
+            --muted:#a7aec4;
+        }
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            background:
+            radial-gradient(
+                circle at top left,
+                rgba(201,162,75,.08),
+                transparent 35%
+            ),
+            linear-gradient(
+                180deg,
+                var(--bg),
+                var(--bg2)
+            );
+
+            color:var(--text);
+            font-family:'EB Garamond',serif;
+            min-height:100vh;
+        }
+
+        .container{
+            max-width:900px;
+            margin:auto;
+            padding:80px 30px 100px;
+        }
+
+        .back{
+            text-decoration:none;
+            color:var(--gold-soft);
+            font-family:'Cinzel',serif;
+            font-size:11px;
+            letter-spacing:.2em;
+            text-transform:uppercase;
+        }
+
+        .hero{
+            margin-top:50px;
+            margin-bottom:70px;
+            text-align:center;
+        }
+
+        .hero small{
+            display:block;
+            font-family:'Cinzel',serif;
+            font-size:11px;
+            letter-spacing:.35em;
+            text-transform:uppercase;
+            color:var(--gold);
+            margin-bottom:20px;
+        }
+
+        .hero h1{
+            font-family:'Cormorant Garamond',serif;
+            font-size:64px;
+            font-weight:500;
+            margin-bottom:20px;
+        }
+
+        .hero p{
+            max-width:650px;
+            margin:auto;
+            font-size:22px;
+            line-height:1.8;
+            color:var(--muted);
+            font-style:italic;
+        }
+
+        .divider{
+            width:70px;
+            height:1px;
+            background:var(--gold);
+            margin:40px auto;
+        }
+
+        .card{
+            background:var(--panel);
+            border:1px solid var(--border);
+            border-left:3px solid var(--gold);
+
+            padding:40px;
+            margin-bottom:30px;
+
+            transition:.3s ease;
+        }
+
+        .card:hover{
+            transform:translateY(-4px);
+        }
+
+        .label{
+            font-family:'Cinzel',serif;
+            font-size:10px;
+            letter-spacing:.25em;
+            text-transform:uppercase;
+            color:var(--gold);
+            margin-bottom:15px;
+        }
+
+        .card h2{
+            font-family:'Cormorant Garamond',serif;
+            font-size:42px;
+            font-weight:500;
+            margin-bottom:20px;
+        }
+
+        .card p{
+            color:var(--muted);
+            line-height:1.8;
+            font-size:19px;
+            margin-bottom:30px;
+        }
+
+        .button{
+            display:inline-block;
+            text-decoration:none;
+
+            background:
+            linear-gradient(
+                135deg,
+                var(--gold),
+                var(--gold-soft)
+            );
+
+            color:var(--bg);
+
+            padding:16px 28px;
+
+            font-family:'Cinzel',serif;
+            font-size:11px;
+            letter-spacing:.18em;
+            text-transform:uppercase;
+        }
+
+        .footer{
+            margin-top:80px;
+            padding-top:30px;
+            border-top:1px solid var(--border);
+            text-align:center;
+        }
+
+        .footer p{
+            font-family:'Cinzel',serif;
+            font-size:10px;
+            letter-spacing:.2em;
+            text-transform:uppercase;
+            color:var(--muted);
+        }
+
+        @media(max-width:768px){
+
+            .hero h1{
+                font-size:48px;
+            }
+
+            .hero p{
+                font-size:20px;
+            }
+
+            .card h2{
+                font-size:34px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="../index.html" class="back"> ← Return to Portal </a>
+        <section class="hero">
+            <small>Mind Anchor Institution</small>
+            <h1>Mind Anchor Forms</h1>
+            <p>
+                Institutional gateways designed for
+                communication, collaboration, and structured
+                reflection before professional engagement.
+            </p>
+            <div class="divider"></div>
+        </section>
+      
+        <!-- FORM 1 -->
+        <section class="card">
+            <div class="label"> Institutional Communication </div>
+            <h2>Institutional Contact</h2>
+            <p>
+                For partnerships, speaking engagements,
+                collaborations, media enquiries, and
+                general communication with the institution.
+            </p>
+            <a href="https://forms.gle/7ntcq5hkaR41yJgK9" target="_blank" class="button"> Open Form </a>
+        </section>
+
+        <!-- FORM 2 -->
+        <section class="card">
+            <div class="label"> Strategic Inquiry </div>
+            <h2>Strategic Reflection</h2>
+            <p>
+                A structured reflection designed to help
+                you observe the visible situation, the
+                underlying patterns, and your current
+                thinking before requesting professional
+                engagement.
+            </p>
+            <a href="https://forms.gle/2AkhsiivkjJaFgfo9" target="_blank" class="button"> Open Form </a>
+        </section>
+
+        <footer class="footer">
+            <p> Mind Anchor · Institutional Access · 2026 </p>
+        </footer>
+    </div>
+</body>
+</html>
