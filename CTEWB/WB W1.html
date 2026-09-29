@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workbook: What You Had, and What Became Visible — Mind Anchor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0B1238;--navy-2:#141C52;--gold:#E2B84E;--gold-deep:#B98A1E;--ivory:#F5EFE0;--paper:#FBF7EC;--ink:#161A3F;--soft:#575D82;--rule:#D9CFB6}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--ivory);color:var(--ink);font:18px/1.7 'Figtree',sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2{font-family:'Young Serif',serif;font-weight:400}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+::selection{background:var(--gold);color:var(--navy)}
+.wrap{max-width:820px;margin:0 auto;padding:0 1.5rem}
+/* header + footer */
+.bar{background:var(--navy);color:var(--ivory)}
+.bar .wrap{max-width:1040px;display:flex;align-items:center;justify-content:space-between;gap:1.2rem;flex-wrap:wrap}
+header .wrap{padding-top:.8rem;padding-bottom:.8rem}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;font:1.15rem 'Young Serif',serif;color:var(--gold)}
+.brand img{width:52px;height:52px;display:block}
+nav{display:flex;gap:1.5rem;font-size:.95rem;flex-wrap:wrap}
+nav a{text-decoration:none;color:#D9DCF0}nav a:hover,nav a[aria-current]{color:var(--gold)}
+.soc{display:flex;gap:.6rem}
+.soc a{width:34px;height:34px;border:1px solid rgba(226,184,78,.5);border-radius:50%;display:grid;place-items:center;color:var(--gold)}
+.soc a:hover{background:var(--gold);color:var(--navy)}
+.soc svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+footer{margin-top:5rem;border-top:1px solid rgba(226,184,78,.35)}
+footer .wrap{padding-top:2rem;padding-bottom:1rem}
+footer p.fine{width:100%;font-size:.85rem;color:#AEB4DA;border-top:1px solid rgba(226,184,78,.15);padding:1rem 0 1.4rem;line-height:1.5}
+/* hero */
+.hero{background:var(--navy);color:var(--ivory);padding:2.6rem 0 3rem}
+.tag{display:inline-block;font-size:.92rem;font-weight:600;color:var(--gold);border-left:3px solid var(--gold);padding:.1rem 0 .1rem .7rem;margin-bottom:1.4rem}
+.hero h1{font-size:clamp(2rem,5.4vw,3.3rem);line-height:1.1;max-width:16ch;margin-bottom:1.1rem}
+.hero p{max-width:54ch;color:#D9DCF0;font-size:1.12rem;line-height:1.6}
+.hero p.note{margin-top:1.2rem;font-size:.95rem;color:#AEB4DA}
+/* steps */
+.step{padding:2.6rem 0 0}
+.step h2{font-size:1.65rem;line-height:1.2;margin-bottom:.4rem}
+.step>p{color:var(--soft);margin-bottom:1.1rem;max-width:58ch}
+label.q{display:block;font-weight:600;margin:1.1rem 0 .35rem}
+label.q span{font-weight:400;color:var(--soft)}
+textarea{width:100%;background:var(--paper);border:1px solid var(--rule);border-radius:2px;padding:.8rem .95rem;font:inherit;font-size:1rem;line-height:1.55;color:var(--ink);resize:vertical;min-height:5.2rem}
+textarea:focus{border-color:var(--gold-deep);outline:2px solid rgba(226,184,78,.5)}
+.pills{display:flex;flex-wrap:wrap;gap:.5rem}
+.pills label{cursor:pointer}
+.pills input{position:absolute;opacity:0}
+.pills span{display:block;padding:.4rem .95rem;border:1px solid var(--rule);background:var(--paper);border-radius:99px;font-size:.96rem;line-height:1.4}
+.pills input:checked+span{background:var(--navy);color:var(--ivory);border-color:var(--navy)}
+.pills input:focus-visible+span{outline:2px solid var(--gold);outline-offset:2px}
+.pills.stack span{border-radius:2px;width:100%}
+.pills.stack label{width:100%}
+/* the one designed moment: the two circles */
+.gap{margin-top:1.5rem;background:var(--navy);color:var(--ivory);padding:1.3rem 1.4rem 1.4rem}
+.gap svg{width:100%;height:auto;display:block}
+.gap svg text{font:13px 'Figtree',sans-serif;fill:#D9DCF0;text-anchor:middle}
+#vis{transition:r .25s ease}
+.gap .row{display:flex;justify-content:space-between;font-size:.88rem;color:#AEB4DA;margin-top:.2rem}
+.gap input[type=range]{width:100%;accent-color:var(--gold);margin-top:.5rem}
+.gap fieldset{border:0}
+.gap legend{font-weight:600;margin-bottom:.2rem}
+.gap .unsure{display:flex;gap:.5rem;align-items:center;margin-top:.7rem;font-size:.95rem;color:#D9DCF0}
+.gap.off svg #vis{opacity:.25}.gap.off input[type=range]{opacity:.35}
+/* actions */
+.btn{font:600 1rem 'Figtree',sans-serif;background:var(--gold);color:var(--navy);border:0;padding:.85rem 1.6rem;cursor:pointer}
+.btn:hover{background:#EDC868}
+.btn.line{background:transparent;border:1px solid var(--navy);color:var(--navy)}
+.btn.line:hover{background:var(--navy);color:var(--ivory)}
+.done{margin-top:2.4rem}
+#after{display:none;margin-top:3rem;border:1px solid var(--gold-deep);background:var(--paper);padding:1.8rem 1.6rem}
+#after.show{display:block}
+#after h2{font-size:1.6rem;margin-bottom:.4rem}
+#after .mine{white-space:pre-wrap;font-size:.98rem;line-height:1.6;border-left:3px solid var(--gold);padding:.2rem 0 .2rem 1rem;margin:1.1rem 0}
+.carry{font:1.2rem/1.4 'Young Serif',serif;margin:1.4rem 0}
+.acts{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1rem}
+.deeper{margin-top:1.6rem;padding-top:1.2rem;border-top:1px solid var(--rule);font-size:.98rem;color:var(--soft)}
+.deeper a{color:var(--ink);font-weight:600}
+#msg{font-size:.9rem;color:var(--gold-deep);margin-top:.6rem;min-height:1.3em}
+@media print{header,footer,.done,.acts,.deeper,.gap input,.gap .unsure{display:none!important}
+body{background:#fff;font-size:12pt}.hero{background:#fff;color:#000;padding:0}.hero p,.hero h1{color:#000}
+#after{display:block;border:0;padding:0}textarea{border:0;border-bottom:1px solid #999;min-height:0}}
+@media(prefers-reduced-motion:reduce){#vis{transition:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="li" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 10v6M8 7.5v.01M12 16v-6M12 12.5c0-2 4-2.5 4 .5v3"/></symbol>
+<symbol id="ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.3 6.7v.01"/></symbol>
+<symbol id="x" viewBox="0 0 24 24"><path d="M4 4l16 16M20 4L4 20"/></symbol>
+<symbol id="yt" viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10 9.5v5l4.5-2.5z"/></symbol>
+</defs></svg>
+
+<header class="bar"><div class="wrap">
+  <a class="brand" href="https://mindanchor-jai.github.io/"><img src="Icon.png" alt="Mind Anchor logo"><span>Mind Anchor</span></a>
+  <nav aria-label="Main">
+    <a href="https://mindanchor-jai.github.io/Articles/">Articles</a>
+    <a href="https://mindanchor-jai.github.io/Framework/">Framework Library</a>
+    <a href="https://mindanchor-jai.github.io/Forms/index.html" aria-current="page">Weekly Workbooks</a>
+  </nav>
+  <div class="soc">
+    <a href="#" aria-label="LinkedIn"><svg><use href="#li"/></svg></a>
+    <a href="#" aria-label="Instagram"><svg><use href="#ig"/></svg></a>
+    <a href="#" aria-label="X"><svg><use href="#x"/></svg></a>
+    <a href="#" aria-label="YouTube"><svg><use href="#yt"/></svg></a>
+  </div>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <span class="tag">Workbook for Article 1 · Confidence Through Evidence</span>
+  <h1>What you had, and what became visible</h1>
+  <p>Take one recent moment and look at the difference between having something to contribute and allowing yourself to contribute it.</p>
+  <p class="note">About 6 minutes. Everything you write stays on this page. Nothing is submitted. Any answer, including “I’m not sure,” is a valid observation.</p>
+</div></section>
+
+<main class="wrap">
+
+<section class="step">
+  <h2>Choose one moment</h2>
+  <p>Think of a recent time you stayed quiet, kept an idea to yourself, or kept your contribution small.</p>
+  <label class="q" for="moment">What happened, in a sentence or two?</label>
+  <textarea id="moment" rows="3" placeholder="For example: in the review, I saw a simpler way to do it and said nothing."></textarea>
+  <label class="q" id="whereL">Where was it?</label>
+  <div class="pills" role="group" aria-labelledby="whereL" id="where">
+    <label><input type="radio" name="where" value="A meeting"><span>A meeting</span></label>
+    <label><input type="radio" name="where" value="A conversation"><span>A conversation</span></label>
+    <label><input type="radio" name="where" value="A group decision"><span>A group decision</span></label>
+    <label><input type="radio" name="where" value="Work I had finished"><span>Work I had finished</span></label>
+    <label><input type="radio" name="where" value="Somewhere else"><span>Somewhere else</span></label>
+  </div>
+</section>
+
+<section class="step">
+  <h2>Separate the two</h2>
+  <p>People usually experience these as one thing. Here they are written apart.</p>
+  <label class="q" for="had">What did you have available?<span> An idea, a view, knowledge, a question.</span></label>
+  <textarea id="had" rows="2"></textarea>
+  <label class="q" for="vis-t">What actually became visible?<span> What you said or did.</span></label>
+  <textarea id="vis-t" rows="2"></textarea>
+  <div class="gap" id="gap">
+    <fieldset>
+      <legend>Roughly how much of what you had became visible?</legend>
+      <svg viewBox="0 0 340 130" role="img" aria-label="A solid gold circle for what was available, and a dashed circle that grows as more became visible">
+        <circle cx="70" cy="62" r="52" fill="#E2B84E"/>
+        <path d="M130 62h60" stroke="#E2B84E" stroke-width="1.5" stroke-dasharray="2 5"/>
+        <circle id="vis" cx="262" cy="62" r="26" fill="none" stroke="#E2B84E" stroke-width="1.8" stroke-dasharray="5 4"/>
+        <text x="70" y="125">what I had</text><text x="262" y="125">what showed</text>
+      </svg>
+      <input type="range" id="amt" min="0" max="100" value="50" aria-label="How much became visible">
+      <div class="row"><span>Very little</span><span>All of it</span></div>
+      <label class="unsure"><input type="checkbox" id="unsure"> I’m not sure</label>
+    </fieldset>
+  </div>
+</section>
+
+<section class="step">
+  <h2>Notice what it seemed to cost</h2>
+  <p>If you had offered the whole of it, what would have come with that? Choose any that apply.</p>
+  <div class="pills" id="cost" role="group" aria-label="Perceived cost">
+    <label><input type="checkbox" value="Being wrong"><span>Being wrong</span></label>
+    <label><input type="checkbox" value="Being noticed"><span>Being noticed</span></label>
+    <label><input type="checkbox" value="Disagreeing with someone"><span>Disagreeing with someone</span></label>
+    <label><input type="checkbox" value="Being held to it afterward"><span>Being held to it afterward</span></label>
+    <label><input type="checkbox" value="Nothing. I had little to add"><span>Nothing. I had little to add</span></label>
+    <label><input type="checkbox" value="Not sure yet"><span>Not sure yet</span></label>
+  </div>
+</section>
+
+<section class="step">
+  <h2>Locate the limit</h2>
+  <p>Looking at the two circles, where did the narrowing seem to happen?</p>
+  <div class="pills stack" id="limit" role="radiogroup" aria-label="Where the limit sat">
+    <label><input type="radio" name="limit" value="Mostly in the contribution: I had little to offer"><span>Mostly in the contribution: I had little to offer</span></label>
+    <label><input type="radio" name="limit" value="Mostly in the permission: I had more than I allowed"><span>Mostly in the permission: I had more than I allowed</span></label>
+    <label><input type="radio" name="limit" value="Some of both"><span>Some of both</span></label>
+    <label><input type="radio" name="limit" value="I can’t tell yet"><span>I can’t tell yet</span></label>
+  </div>
+</section>
+
+<section class="step">
+  <h2>What do you see now?</h2>
+  <label class="q" for="see">Complete the sentence.</label>
+  <textarea id="see" rows="3" placeholder="What I can see more clearly now is…"></textarea>
+  <div class="done"><button class="btn" id="finish">Complete workbook</button><p id="msg" role="status"></p></div>
+</section>
+
+<section id="after" aria-live="polite">
+  <h2>This reflection is yours.</h2>
+  <p>Here is what you wrote, in one place. Keep it if it helps you remember. Nothing has been sent anywhere.</p>
+  <div class="mine" id="mine"></div>
+  <p class="carry">Next time you hold back: is it that you have nothing to say, or that saying it feels costly?</p>
+  <div class="acts">
+    <button class="btn" id="pdf">Save as PDF</button>
+    <button class="btn line" id="copy">Copy my reflection</button>
+    <button class="btn line" id="again">Use it on another moment</button>
+  </div>
+  <p class="deeper">If this seems larger than one moment, you can ask to go through it with someone. That is optional, and nothing is shared unless you choose to. <a href="#" id="review">Request a Strategic Reflection Review</a></p>
+</section>
+
+</main>
+
+<footer class="bar"><div class="wrap">
+  <a class="brand" href="https://mindanchor-jai.github.io/"><img src="Icon.png" alt="Mind Anchor logo"><span>Mind Anchor</span></a>
+  <nav aria-label="Footer">
+    <a href="https://mindanchor-jai.github.io/Articles/">Articles</a>
+    <a href="https://mindanchor-jai.github.io/Framework/">Framework Library</a>
+    <a href="https://mindanchor-jai.github.io/Forms/index.html">Weekly Workbooks</a>
+  </nav>
+  <div class="soc">
+    <a href="#" aria-label="LinkedIn"><svg><use href="#li"/></svg></a>
+    <a href="#" aria-label="Instagram"><svg><use href="#ig"/></svg></a>
+    <a href="#" aria-label="X"><svg><use href="#x"/></svg></a>
+    <a href="#" aria-label="YouTube"><svg><use href="#yt"/></svg></a>
+  </div>
+  <p class="fine">© Mind Anchor. This workbook is a tool for self-observation. It is not a test, a diagnosis or therapy, and your answers belong to you.</p>
+</div></footer>
+
+<script>
+const REVIEW_URL="#"; // set to the Strategic Reflection Review enquiry link
+const $=s=>document.querySelector(s), val=n=>{const e=document.querySelector(`input[name=${n}]:checked`);return e?e.value:""};
+const amt=$("#amt"),unsure=$("#unsure"),gap=$("#gap"),vis=$("#vis");
+function draw(){vis.setAttribute("r",6+amt.value*.46);gap.classList.toggle("off",unsure.checked);amt.disabled=unsure.checked}
+amt.oninput=draw;unsure.onchange=draw;draw();
+$("#review").href=REVIEW_URL;
+function build(){
+  const L=[],add=(k,v)=>v&&v.trim()&&L.push(k+"\n"+v.trim());
+  add("The moment",$("#moment").value+(val("where")?" ("+val("where")+")":""));
+  add("What I had available",$("#had").value);
+  add("What became visible",$("#vis-t").value);
+  const p=unsure.checked?"I’m not sure":(amt.value<20?"Very little":amt.value<45?"Some of it":amt.value<70?"About half":amt.value<90?"Most of it":"All of it");
+  add("How much became visible",p);
+  const c=[...document.querySelectorAll("#cost input:checked")].map(e=>e.value).join("; ");add("What it seemed to cost",c);
+  add("Where the limit sat",val("limit"));
+  add("What I can see more clearly now",$("#see").value);
+  return L.join("\n\n");
+}
+$("#finish").onclick=()=>{
+  const t=build(),a=$("#after");$("#mine").textContent=t||"You left it blank. That is a valid place to stop for now.";
+  a.classList.add("show");a.scrollIntoView({behavior:"smooth",block:"start"});
+};
+$("#pdf").onclick=()=>print();
+$("#copy").onclick=async()=>{
+  try{await navigator.clipboard.writeText(build());$("#msg").textContent="";$("#copy").textContent="Copied";setTimeout(()=>$("#copy").textContent="Copy my reflection",1800)}
+  catch(e){$("#copy").textContent="Select the text above to copy"}
+};
+$("#again").onclick=()=>{
+  document.querySelectorAll("textarea").forEach(e=>e.value="");
+  document.querySelectorAll("input[type=radio],input[type=checkbox]").forEach(e=>e.checked=false);
+  amt.value=50;draw();$("#after").classList.remove("show");scrollTo({top:0,behavior:"smooth"});
+};
+</script>
+</body>
+</html>
