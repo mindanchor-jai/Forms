@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Confidence Through Evidence - Weekly Workbooks | Mind Anchor</title>
+<meta name="description" content="Confidence Through Evidence: a series of eight short workbooks from Mind Anchor. Open each workbook online or download it as a PDF.">
+<link rel="icon" href="https://mindanchor-jai.github.io/assets/icon_small.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-950:#05070d; --navy-900:#0a0f1c; --navy-850:#0d1424; --navy-800:#111a30; --navy-700:#1c2740;
+    --line:rgba(216,190,140,0.18); --line-soft:rgba(216,190,140,0.10);
+    --gold-300:#e9d19c; --gold-400:#d3ac5c; --gold-600:#a9822f;
+    --ivory:#f2ede1; --muted:#93a0b8; --muted-soft:#5f6a80;
+    --serif:'Cormorant Garamond', Georgia, serif;
+    --sans:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --maxw:1240px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--navy-950); color:var(--ivory); font-family:var(--sans); line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 48px;}
+  h1,h2,h3{font-family:var(--serif); font-weight:500; letter-spacing:-0.01em; color:var(--ivory);}
+  p{color:var(--muted); font-size:16.5px;}
+  .eyebrow{font-size:12px; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold-400); font-weight:600; display:flex; align-items:center; gap:14px; margin-bottom:22px;}
+  .eyebrow::after{content:""; flex:1; max-width:120px; height:1px; background:linear-gradient(90deg,var(--gold-600),transparent);}
+  .divider{height:1px; background:var(--line-soft); width:100%;}
+
+  /* buttons */
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:10px; background:var(--gold-400); color:var(--navy-950); font-family:var(--sans); font-weight:600; font-size:14.5px; padding:14px 24px; border:1px solid var(--gold-400); transition:background .25s ease, transform .2s ease; cursor:pointer;}
+  .btn:hover{background:var(--gold-300); transform:translateY(-1px);}
+  .btn-outline{background:transparent; color:var(--gold-300); border:1px solid var(--line);}
+  .btn-outline:hover{background:transparent; border-color:var(--gold-400); color:var(--gold-400);}
+  .btn[disabled]{cursor:progress; opacity:.65; transform:none;}
+  .btn svg{width:15px; height:15px; flex-shrink:0;}
+
+  /* HEADER (matches homepage) */
+  header{position:sticky; top:0; z-index:50; background:rgba(6,9,16,0.86); backdrop-filter:blur(10px); border-bottom:1px solid var(--line-soft);}
+  .header-inner{max-width:var(--maxw); margin:0 auto; padding:0 48px; height:78px; display:flex; align-items:center; justify-content:space-between;}
+  .brand{display:flex; align-items:center; gap:12px;}
+  .brand img{height:36px; width:36px; border-radius:2px;}
+  .brand span{font-family:var(--serif); font-size:22px; letter-spacing:0.01em; color:var(--ivory);}
+  .socials{display:flex; align-items:center; gap:22px;}
+  .socials a{color:var(--ivory); opacity:0.75; transition:opacity .2s ease, color .2s ease;}
+  .socials a:hover{opacity:1; color:var(--gold-400);}
+  .socials svg{width:17px; height:17px; display:block;}
+
+  /* HERO */
+  .hero{position:relative; overflow:hidden; padding:84px 0 96px;}
+  .hero-bg{position:absolute; inset:0; z-index:0; background:
+    radial-gradient(ellipse 700px 500px at 82% 28%, rgba(211,172,92,0.16), transparent 60%),
+    radial-gradient(ellipse 900px 700px at 90% 90%, rgba(24,38,66,0.9), transparent 65%),
+    linear-gradient(180deg, var(--navy-950) 0%, var(--navy-900) 60%, var(--navy-950) 100%);}
+  .hero-rings{position:absolute; right:6%; top:50%; transform:translateY(-50%); width:480px; height:480px; opacity:0.5; z-index:0;}
+  .hero-inner{position:relative; z-index:1;}
+  .back{display:inline-flex; align-items:center; gap:8px; font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold-300); font-weight:600; margin-bottom:44px; transition:color .2s ease;}
+  .back:hover{color:var(--gold-400);}
+  .hero-tag{font-size:12px; letter-spacing:0.24em; text-transform:uppercase; color:var(--gold-400); font-weight:600; margin-bottom:26px;}
+  .hero h1{font-size:clamp(42px,5.2vw,68px); line-height:1.08; max-width:14ch;}
+  .hero h1 em{font-style:normal; color:var(--gold-300);}
+  .hero p.lead{margin-top:26px; max-width:52ch; font-size:18px;}
+  .hero-meta{margin-top:34px; display:flex; gap:34px; flex-wrap:wrap;}
+  .hero-meta div{font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:var(--muted-soft); font-weight:600;}
+  .hero-meta strong{display:block; font-family:var(--serif); font-size:30px; letter-spacing:0; text-transform:none; color:var(--gold-300); font-weight:500; margin-bottom:2px;}
+
+  /* LIBRARY */
+  .library{padding:96px 0 40px;}
+  .grid{display:grid; grid-template-columns:repeat(2,1fr); gap:28px; margin-top:8px;}
+  .card{position:relative; display:flex; flex-direction:column; padding:38px 38px 34px; background:linear-gradient(160deg, var(--navy-850), var(--navy-950)); border:1px solid var(--line-soft); border-left:2px solid var(--gold-400); transition:transform .3s ease, border-color .3s ease;}
+  .card:hover{transform:translateY(-4px); border-color:var(--line);}
+  .card:hover{border-left-color:var(--gold-300);}
+  .card-top{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:18px;}
+  .num{font-family:var(--serif); font-size:44px; line-height:1; color:var(--gold-300);}
+  .tag{font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold-400); font-weight:600;}
+  .card h3{font-size:30px; line-height:1.2; margin-bottom:14px;}
+  .card p{font-size:15.5px; margin-bottom:26px; max-width:46ch;}
+  .card .time{font-size:12.5px; color:var(--muted-soft); margin-bottom:24px;}
+  .actions{margin-top:auto; display:flex; gap:12px; flex-wrap:wrap;}
+  .card.soon{border-left-color:var(--line); background:var(--navy-900);}
+  .card.soon:hover{transform:none; border-color:var(--line-soft);}
+  .card.soon .num, .card.soon h3{color:var(--muted);}
+  .card.soon .tag{color:var(--muted-soft);}
+  .card.soon p{color:var(--muted-soft); margin-bottom:0;}
+  .pdf-note{margin-top:22px; font-size:13px; color:var(--muted-soft); min-height:20px;}
+  .pdf-note.err{color:var(--gold-300);}
+
+  .reveal{opacity:0; transform:translateY(22px); transition:opacity .8s ease, transform .8s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  /* FOOTER (matches homepage) */
+  footer{padding:80px 0 34px; border-top:1px solid var(--line-soft); margin-top:90px;}
+  .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:50px;}
+  .footer-brand{font-family:var(--serif); font-size:24px; color:var(--ivory); margin-bottom:16px;}
+  .footer-col h4{font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold-400); font-weight:600; margin-bottom:18px;}
+  .footer-col ul{list-style:none; display:flex; flex-direction:column; gap:12px;}
+  .footer-col a{color:var(--muted); font-size:14.5px; transition:color .2s ease;}
+  .footer-col a:hover{color:var(--gold-300);}
+  .footer-bottom{margin-top:70px; padding-top:26px; border-top:1px solid var(--line-soft); font-size:12.5px; color:var(--muted-soft);}
+
+  @media (max-width:980px){
+    .wrap, .header-inner{padding:0 28px;}
+    .hero{padding:60px 0 70px;}
+    .hero-rings{opacity:.25; right:-120px;}
+    .library{padding:70px 0 20px;}
+    .grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr; row-gap:40px;}
+  }
+  @media (max-width:600px){
+    .card{padding:30px 24px 26px;}
+    .card h3{font-size:26px;}
+    .socials{gap:16px;}
+    .actions .btn{width:100%;}
+    .footer-grid{grid-template-columns:1fr; gap:34px;}
+  }
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1; transform:none; transition:none;} .btn,.card{transition:none;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="https://mindanchor-jai.github.io/" class="brand">
+      <img src="https://mindanchor-jai.github.io/assets/icon_small.png" alt="Mind Anchor emblem">
+      <span>Mind.Anchor</span>
+    </a>
+    <nav class="socials">
+      <a href="https://www.linkedin.com/in/jainakra" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/mind.anchor_jai/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+      </a>
+      <a href="https://x.com/MindAnchor_Jai" target="_blank" rel="noopener" aria-label="X">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.9 10.6 21.2 3h-1.9l-6.3 6.6L8 3H3l7.4 9.9L3 21h1.9l6.7-7 5.4 7H22l-8.1-10.4Zm-2.4 2.5-.8-1L5.6 4.3h2.2l4.9 6.3.8 1 6.4 8.3h-2.2l-5.2-6.8Z"/></svg>
+      </a>
+      <a href="https://www.youtube.com/@MindAnchor_Jai" target="_blank" rel="noopener" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10.5 9.5v5l4.4-2.5-4.4-2.5Z" fill="currentColor" stroke="none"/></svg>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <svg class="hero-rings" viewBox="0 0 500 500" fill="none" aria-hidden="true">
+      <circle cx="250" cy="250" r="230" stroke="#d3ac5c" stroke-opacity="0.14"/>
+      <circle cx="250" cy="250" r="170" stroke="#d3ac5c" stroke-opacity="0.2"/>
+      <circle cx="250" cy="250" r="110" stroke="#d3ac5c" stroke-opacity="0.3"/>
+      <line x1="250" y1="20" x2="250" y2="480" stroke="#d3ac5c" stroke-opacity="0.16"/>
+      <line x1="20" y1="250" x2="480" y2="250" stroke="#d3ac5c" stroke-opacity="0.16"/>
+    </svg>
+    <div class="wrap hero-inner">
+      <a href="https://mindanchor-jai.github.io/" class="back">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+        Mind Anchor
+      </a>
+      <div class="hero-tag">Weekly Workbooks · Current Series</div>
+      <h1>Confidence Through <em>Evidence.</em></h1>
+      <p class="lead">A series of eight short workbooks for looking at your own moments, and seeing what you had, what showed, and what stood in between.</p>
+      <div class="hero-meta">
+        <div><strong>8</strong>Workbooks in the series</div>
+        <div><strong id="avail-count">1</strong>Available now</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section class="library">
+    <div class="wrap reveal">
+      <div class="eyebrow">Workbook Library</div>
+      <div class="grid" id="grid"></div>
+      <div class="pdf-note" id="pdf-note" role="status" aria-live="polite"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Mind.Anchor</div>
+        <p style="max-width:34ch; font-size:14.5px;">A reflection and self-understanding platform exploring the patterns behind how we think, feel, react, and decide.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="https://mindanchor-jai.github.io/Articles/" target="_blank" rel="noopener">Articles</a></li>
+          <li><a href="https://mindanchor-jai.github.io/Framework/" target="_blank" rel="noopener">Framework Library</a></li>
+          <li><a href="https://mindanchor-jai.github.io/Forms/index.html">Weekly Workbooks</a></li>
+          <li><a href="https://open.spotify.com/show/5ISZnENySHQpxLBKczvfFj" target="_blank" rel="noopener">Podcast</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://mindanchor-jai.github.io/#newsletter">Anchored Intelligence</a></li>
+          <li><a href="https://www.linkedin.com/in/jainakra" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/mind.anchor_jai/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://x.com/MindAnchor_Jai" target="_blank" rel="noopener">X</a></li>
+          <li><a href="https://www.youtube.com/@MindAnchor_Jai" target="_blank" rel="noopener">YouTube</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="https://mindanchor-jai.github.io/#about">Mind Anchor</a></li>
+          <li><a href="https://mindanchor-jai.github.io/#founder">Founder</a></li>
+          <li><a href="https://mindanchor-jai.github.io/#services">Services</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Mind Anchor. All rights reserved.</div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+/* ------------------------------------------------------------------
+   ADD A NEW WORKBOOK:
+   Upload the file (e.g. WB_W2.html) next to this index, then change that
+   entry from  available:false  to  available:true  and fill in title,
+   blurb and time. Nothing else needs editing.
+------------------------------------------------------------------- */
+const SERIES = "Confidence Through Evidence";
+const TOTAL = 8;
+const WORKBOOKS = [
+  { n:1, file:"WB_W1.html", available:true,
+    title:"What You Had, and What Became Visible",
+    blurb:"Take one recent moment and look at the difference between having something to contribute and allowing yourself to contribute it.",
+    time:"About 6 minutes" }
+  // { n:2, file:"WB_W2.html", available:true, title:"…", blurb:"…", time:"About 6 minutes" },
+];
+
+const ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+const DOWN  = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg>';
+const pad = n => String(n).padStart(2, "0");
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+const grid = document.getElementById("grid");
+const note = document.getElementById("pdf-note");
+let html = "";
+for (let i = 1; i <= TOTAL; i++) {
+  const wb = WORKBOOKS.find(w => w.n === i);
+  if (wb && wb.available) {
+    html += `
+    <article class="card">
+      <div class="card-top"><div class="num">${pad(i)}</div><div class="tag">Workbook ${pad(i)}</div></div>
+      <h3>${esc(wb.title)}</h3>
+      <p>${esc(wb.blurb)}</p>
+      <div class="time">${esc(wb.time)}</div>
+      <div class="actions">
+        <a class="btn" href="${esc(wb.file)}" target="_blank" rel="noopener">Open Workbook ${ARROW}</a>
+        <button class="btn btn-outline" type="button" data-pdf="${i}">${DOWN} Download as PDF</button>
+      </div>
+    </article>`;
+  } else {
+    html += `
+    <article class="card soon" aria-label="Workbook ${pad(i)}, coming soon">
+      <div class="card-top"><div class="num">${pad(i)}</div><div class="tag">Coming soon</div></div>
+      <h3>Workbook ${pad(i)}</h3>
+      <p>This workbook is on its way.</p>
+    </article>`;
+  }
+}
+grid.innerHTML = html;
+document.getElementById("avail-count").textContent = WORKBOOKS.filter(w => w.available).length;
+
+/* ---------- Download as PDF ----------
+   Loads the workbook page (same GitHub Pages origin) in a hidden frame,
+   strips the site header/footer and interactive-only parts, and saves a
+   clean A4 PDF automatically. */
+function say(msg, isErr){ note.textContent = msg; note.classList.toggle("err", !!isErr); }
+
+async function downloadPdf(wb, btn){
+  const label = btn.innerHTML;
+  btn.disabled = true; btn.textContent = "Preparing PDF…";
+  say("Preparing your PDF. This takes a few seconds.");
+  const frame = document.createElement("iframe");
+  frame.style.cssText = "position:fixed;left:-10000px;top:0;width:900px;height:1200px;border:0;visibility:hidden;";
+  frame.src = wb.file;
+  document.body.appendChild(frame);
+  try {
+    await new Promise((res, rej) => { frame.onload = res; frame.onerror = rej; setTimeout(() => rej(new Error("timeout")), 20000); });
+    const doc = frame.contentDocument;
+    if (doc.fonts && doc.fonts.ready) await doc.fonts.ready;
+    await Promise.all([...doc.images].map(img => img.complete ? 1 : new Promise(r => { img.onload = img.onerror = r; })));
+
+    // Clean print view: keep the title block and the questions only.
+    const css = doc.createElement("style");
+    css.textContent = `
+      header, footer, .done, #after, .deeper, .gap input[type=range], .gap .unsure { display:none !important; }
+      body { background:#fff !important; }
+      .hero { padding:1.6rem 0 2rem !important; }
+      .step { break-inside:avoid; }
+      textarea { min-height:4.6rem; border:1px solid #cfc6ad !important; }
+    `;
+    doc.head.appendChild(css);
+
+    const fileName = SERIES.replace(/\s+/g, "-") + "_Workbook-" + pad(wb.n) + ".pdf";
+    await html2pdf().set({
+      margin:[8, 0, 10, 0],
+      filename:fileName,
+      image:{ type:"jpeg", quality:0.98 },
+      html2canvas:{ scale:2, useCORS:true, backgroundColor:"#F5EFE0", windowWidth:900 },
+      jsPDF:{ unit:"mm", format:"a4", orientation:"portrait" },
+      pagebreak:{ mode:["css","legacy"], avoid:[".step", ".hero"] }
+    }).from(doc.body).save();
+    say("Your PDF has been downloaded.");
+  } catch (e) {
+    console.error(e);
+    say("Couldn't create the PDF here. Open the workbook and use “Save as PDF” instead.", true);
+  } finally {
+    frame.remove();
+    btn.disabled = false; btn.innerHTML = label;
+  }
+}
+
+grid.addEventListener("click", e => {
+  const btn = e.target.closest("[data-pdf]");
+  if (!btn) return;
+  const wb = WORKBOOKS.find(w => w.n === Number(btn.dataset.pdf));
+  if (wb) downloadPdf(wb, btn);
+});
+
+/* reveal on scroll */
+const io = new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) { x.target.classList.add("in"); io.unobserve(x.target); } }), { threshold:0.08 });
+document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+</script>
+</body>
+</html>
