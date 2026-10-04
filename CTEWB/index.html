@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Confidence Through Evidence - Weekly Workbooks | Mind Anchor</title>
+<title>Confidence Through Evidence — Weekly Workbooks | Mind Anchor</title>
 <meta name="description" content="Confidence Through Evidence: a series of eight short workbooks from Mind Anchor. Open each workbook online or download it as a PDF.">
-<link rel="icon" href="https://mindanchor-jai.github.io/icon_small.png">
+<link rel="icon" href="https://mindanchor-jai.github.io/assets/icon_small.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -124,7 +124,7 @@
 <header>
   <div class="header-inner">
     <a href="https://mindanchor-jai.github.io/" class="brand">
-      <img src="https://mindanchor-jai.github.io/icon_small.png" alt="Mind Anchor emblem">
+      <img src="https://mindanchor-jai.github.io/assets/icon_small.png" alt="Mind Anchor emblem">
       <span>Mind.Anchor</span>
     </a>
     <nav class="socials">
@@ -155,7 +155,7 @@
       <line x1="20" y1="250" x2="480" y2="250" stroke="#d3ac5c" stroke-opacity="0.16"/>
     </svg>
     <div class="wrap hero-inner">
-      <a href="../index.html" class="back">
+      <a href="https://mindanchor-jai.github.io/" class="back">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
         Mind Anchor
       </a>
@@ -164,7 +164,7 @@
       <p class="lead">A series of eight short workbooks for looking at your own moments, and seeing what you had, what showed, and what stood in between.</p>
       <div class="hero-meta">
         <div><strong>8</strong>Workbooks in the series</div>
-        <div><strong id="avail-count">1</strong>Available now</div>
+        <div><strong id="avail-count">2</strong>Available now</div>
       </div>
     </div>
   </section>
@@ -230,11 +230,15 @@
 const SERIES = "Confidence Through Evidence";
 const TOTAL = 8;
 const WORKBOOKS = [
-  { n:1, file:"WB W1.html", available:true,
+  { n:1, file:"WB_W1.html", available:true,
     title:"What You Had, and What Became Visible",
     blurb:"Take one recent moment and look at the difference between having something to contribute and allowing yourself to contribute it.",
+    time:"About 6 minutes" },
+  { n:2, file:"WB_W2.html", available:true,
+    title:"What Stood Between Knowing and Saying",
+    blurb:"Take one moment where you knew more than you said, and look at where the route from knowing to saying narrowed.",
     time:"About 6 minutes" }
-  // { n:2, file:"WB_W2.html", available:true, title:"…", blurb:"…", time:"About 6 minutes" },
+  // { n:3, file:"WB_W3.html", available:true, title:"…", blurb:"…", time:"About 6 minutes" },
 ];
 
 const ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
