@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workbook: What Stood Between Knowing and Saying — Mind Anchor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0B1238;--navy-2:#141C52;--gold:#E2B84E;--gold-deep:#B98A1E;--ivory:#F5EFE0;--paper:#FBF7EC;--ink:#161A3F;--soft:#575D82;--rule:#D9CFB6}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--ivory);color:var(--ink);font:18px/1.7 'Figtree',sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2{font-family:'Young Serif',serif;font-weight:400}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+::selection{background:var(--gold);color:var(--navy)}
+.wrap{max-width:820px;margin:0 auto;padding:0 1.5rem}
+/* header + footer */
+.bar{background:var(--navy);color:var(--ivory)}
+.bar .wrap{max-width:1040px;display:flex;align-items:center;justify-content:space-between;gap:1.2rem;flex-wrap:wrap}
+header .wrap{padding-top:.8rem;padding-bottom:.8rem}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;font:1.15rem 'Young Serif',serif;color:var(--gold)}
+.brand img{width:52px;height:52px;display:block}
+nav{display:flex;gap:1.5rem;font-size:.95rem;flex-wrap:wrap}
+nav a{text-decoration:none;color:#D9DCF0}nav a:hover,nav a[aria-current]{color:var(--gold)}
+.soc{display:flex;gap:.6rem}
+.soc a{width:34px;height:34px;border:1px solid rgba(226,184,78,.5);border-radius:50%;display:grid;place-items:center;color:var(--gold)}
+.soc a:hover{background:var(--gold);color:var(--navy)}
+.soc svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+footer{margin-top:5rem;border-top:1px solid rgba(226,184,78,.35)}
+footer .wrap{padding-top:2rem;padding-bottom:1rem}
+footer p.fine{width:100%;font-size:.85rem;color:#AEB4DA;border-top:1px solid rgba(226,184,78,.15);padding:1rem 0 1.4rem;line-height:1.5}
+/* hero */
+.hero{background:var(--navy);color:var(--ivory);padding:2.6rem 0 3rem}
+.tag{display:inline-block;font-size:.92rem;font-weight:600;color:var(--gold);border-left:3px solid var(--gold);padding:.1rem 0 .1rem .7rem;margin-bottom:1.4rem}
+.hero h1{font-size:clamp(2rem,5.4vw,3.3rem);line-height:1.1;max-width:16ch;margin-bottom:1.1rem}
+.hero p{max-width:54ch;color:#D9DCF0;font-size:1.12rem;line-height:1.6}
+.hero p.note{margin-top:1.2rem;font-size:.95rem;color:#AEB4DA}
+/* steps */
+.step{padding:2.6rem 0 0}
+.step h2{font-size:1.65rem;line-height:1.2;margin-bottom:.4rem}
+.step>p{color:var(--soft);margin-bottom:1.1rem;max-width:58ch}
+label.q{display:block;font-weight:600;margin:1.1rem 0 .35rem}
+label.q span{font-weight:400;color:var(--soft)}
+textarea{width:100%;background:var(--paper);border:1px solid var(--rule);border-radius:2px;padding:.8rem .95rem;font:inherit;font-size:1rem;line-height:1.55;color:var(--ink);resize:vertical;min-height:5.2rem}
+textarea:focus{border-color:var(--gold-deep);outline:2px solid rgba(226,184,78,.5)}
+.pills{display:flex;flex-wrap:wrap;gap:.5rem}
+.pills label{cursor:pointer}
+.pills input{position:absolute;opacity:0}
+.pills span{display:block;padding:.4rem .95rem;border:1px solid var(--rule);background:var(--paper);border-radius:99px;font-size:.96rem;line-height:1.4}
+.pills input:checked+span{background:var(--navy);color:var(--ivory);border-color:var(--navy)}
+.pills input:focus-visible+span{outline:2px solid var(--gold);outline-offset:2px}
+.pills.stack span{border-radius:2px;width:100%}
+.pills.stack label{width:100%}
+/* the one designed moment: the two circles */
+.gap{margin-top:1.5rem;background:var(--navy);color:var(--ivory);padding:1.3rem 1.4rem 1.4rem}
+.gap svg{width:100%;height:auto;display:block}
+.gap svg text{font:13px 'Figtree',sans-serif;fill:#D9DCF0;text-anchor:middle}
+#vis{transition:r .25s ease}
+.gap .row{display:flex;justify-content:space-between;font-size:.88rem;color:#AEB4DA;margin-top:.2rem}
+.gap input[type=range]{width:100%;accent-color:var(--gold);margin-top:.5rem}
+.gap fieldset{border:0}
+.gap legend{font-weight:600;margin-bottom:.2rem}
+.gap .unsure{display:flex;gap:.5rem;align-items:center;margin-top:.7rem;font-size:.95rem;color:#D9DCF0}
+.gap.off svg #vis{opacity:.25}.gap.off input[type=range]{opacity:.35}
+.rt{margin-top:1.3rem}.rt b{display:block;font-weight:600}.rt small{display:block;color:var(--soft);font-size:.95rem;margin-bottom:.4rem;line-height:1.45}
+/* actions */
+.btn{font:600 1rem 'Figtree',sans-serif;background:var(--gold);color:var(--navy);border:0;padding:.85rem 1.6rem;cursor:pointer}
+.btn:hover{background:#EDC868}
+.btn.line{background:transparent;border:1px solid var(--navy);color:var(--navy)}
+.btn.line:hover{background:var(--navy);color:var(--ivory)}
+.done{margin-top:2.4rem}
+#after{display:none;margin-top:3rem;border:1px solid var(--gold-deep);background:var(--paper);padding:1.8rem 1.6rem}
+#after.show{display:block}
+#after h2{font-size:1.6rem;margin-bottom:.4rem}
+#after .mine{white-space:pre-wrap;font-size:.98rem;line-height:1.6;border-left:3px solid var(--gold);padding:.2rem 0 .2rem 1rem;margin:1.1rem 0}
+.carry{font:1.2rem/1.4 'Young Serif',serif;margin:1.4rem 0}
+.acts{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1rem}
+.deeper{margin-top:1.6rem;padding-top:1.2rem;border-top:1px solid var(--rule);font-size:.98rem;color:var(--soft)}
+.deeper a{color:var(--ink);font-weight:600}
+#msg{font-size:.9rem;color:var(--gold-deep);margin-top:.6rem;min-height:1.3em}
+@media print{header,footer,.done,.acts,.deeper,.gap input,.gap .unsure{display:none!important}
+body{background:#fff;font-size:12pt}.hero{background:#fff;color:#000;padding:0}.hero p,.hero h1{color:#000}
+#after{display:block;border:0;padding:0}textarea{border:0;border-bottom:1px solid #999;min-height:0}}
+@media(prefers-reduced-motion:reduce){#vis{transition:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="li" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 10v6M8 7.5v.01M12 16v-6M12 12.5c0-2 4-2.5 4 .5v3"/></symbol>
+<symbol id="ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.3 6.7v.01"/></symbol>
+<symbol id="x" viewBox="0 0 24 24"><path d="M4 4l16 16M20 4L4 20"/></symbol>
+<symbol id="yt" viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10 9.5v5l4.5-2.5z"/></symbol>
+</defs></svg>
+
+<header class="bar"><div class="wrap">
+  <a class="brand" href="https://mindanchor-jai.github.io/"><img src="Icon.png" alt="Mind Anchor logo"><span>Mind Anchor</span></a>
+  <nav aria-label="Main">
+    <a href="https://mindanchor-jai.github.io/Articles/">Articles</a>
+    <a href="https://mindanchor-jai.github.io/Framework/">Framework Library</a>
+    <a href="https://mindanchor-jai.github.io/Forms/index.html" aria-current="page">Weekly Workbooks</a>
+  </nav>
+  <div class="soc">
+    <a href="#" aria-label="LinkedIn"><svg><use href="#li"/></svg></a>
+    <a href="#" aria-label="Instagram"><svg><use href="#ig"/></svg></a>
+    <a href="#" aria-label="X"><svg><use href="#x"/></svg></a>
+    <a href="#" aria-label="YouTube"><svg><use href="#yt"/></svg></a>
+  </div>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <span class="tag">Workbook for Article 2 · Confidence Through Evidence</span>
+  <h1>What stood between knowing and saying</h1>
+  <p>Take one moment where you knew more than you said, and look at where the route from knowing to saying narrowed.</p>
+  <p class="note">About 6 minutes. Everything you write stays on this page. Nothing is submitted. Any answer, including “I’m not sure,” is a valid observation.</p>
+</div></section>
+
+<main class="wrap">
+
+<section class="step">
+  <h2>Choose one moment</h2>
+  <p>Think of a time you knew the answer or had another way to do it, but it did not come out, or came out weakly.</p>
+  <label class="q" for="moment">What was the situation, and what did you know?</label>
+  <textarea id="moment" rows="3" placeholder="For example: I was asked about the vendor change and knew the risk, but my answer came out vague."></textarea>
+  <label class="q" for="outside">What would someone watching have assumed?</label>
+  <textarea id="outside" rows="2"></textarea>
+</section>
+
+<section class="step">
+  <h2>Follow the route</h2>
+  <p>Knowledge has to travel to your voice. For this moment, mark how each stretch of the route felt.</p>
+  <div class="rt"><b>Knowing it</b><small>Did you have the answer or idea?</small>
+    <div class="pills" role="radiogroup" aria-label="Knowing it">
+      <label><input type="radio" name="k1" value="Clear"><span>Clear</span></label>
+      <label><input type="radio" name="k1" value="Narrowed"><span>Narrowed</span></label>
+      <label><input type="radio" name="k1" value="Not sure"><span>Not sure</span></label></div></div>
+  <div class="rt"><b>Trusting it</b><small>Did you trust that what you knew was worth saying?</small>
+    <div class="pills" role="radiogroup" aria-label="Trusting it">
+      <label><input type="radio" name="k2" value="Clear"><span>Clear</span></label>
+      <label><input type="radio" name="k2" value="Narrowed"><span>Narrowed</span></label>
+      <label><input type="radio" name="k2" value="Not sure"><span>Not sure</span></label></div></div>
+  <div class="rt"><b>Saying it</b><small>Did it come out as quickly and steadily as you knew it?</small>
+    <div class="pills" role="radiogroup" aria-label="Saying it">
+      <label><input type="radio" name="k3" value="Clear"><span>Clear</span></label>
+      <label><input type="radio" name="k3" value="Narrowed"><span>Narrowed</span></label>
+      <label><input type="radio" name="k3" value="Not sure"><span>Not sure</span></label></div></div>
+  <div class="gap">
+    <svg viewBox="0 0 360 130" role="img" aria-label="A channel from knowing to saying that narrows where you marked it">
+      <path id="ch" fill="#E2B84E" fill-opacity=".9" d=""/>
+      <text x="50" y="122">knowing</text><text x="170" y="122">trusting</text><text x="290" y="122">saying</text>
+    </svg>
+  </div>
+</section>
+
+<section class="step">
+  <h2>Notice what was present</h2>
+  <p>Where it narrowed, what was around you? Choose any that apply.</p>
+  <div class="pills" id="cond" role="group" aria-label="What was present">
+    <label><input type="checkbox" value="A sudden question"><span>A sudden question</span></label>
+    <label><input type="checkbox" value="People watching"><span>People watching</span></label>
+    <label><input type="checkbox" value="Someone senior"><span>Someone senior</span></label>
+    <label><input type="checkbox" value="Pressure to be quick"><span>Pressure to be quick</span></label>
+    <label><input type="checkbox" value="Doubt that I was right"><span>Doubt that I was right</span></label>
+    <label><input type="checkbox" value="Nothing in particular"><span>Nothing in particular</span></label>
+    <label><input type="checkbox" value="Not sure yet"><span>Not sure yet</span></label>
+  </div>
+</section>
+
+<section class="step">
+  <h2>What do you see now?</h2>
+  <p>Not only “am I able?” but a second question. Complete the sentence.</p>
+  <label class="q" for="see">What stands between what I know and what I say is…</label>
+  <textarea id="see" rows="3"></textarea>
+  <div class="done"><button class="btn" id="finish">Complete workbook</button><p id="msg" role="status"></p></div>
+</section>
+
+<section id="after" aria-live="polite">
+  <h2>This reflection is yours.</h2>
+  <p>Here is what you wrote, in one place. Keep it if it helps you remember. Nothing has been sent anywhere.</p>
+  <div class="mine" id="mine"></div>
+  <p class="carry">Where do you know more than you usually say, and what makes it hard to bring out loud?</p>
+  <div class="acts">
+    <button class="btn" id="pdf">Save as PDF</button>
+    <button class="btn line" id="copy">Copy my reflection</button>
+    <button class="btn line" id="again">Use it on another moment</button>
+  </div>
+  <p class="deeper">If this seems larger than one moment, you can ask to go through it with someone. That is optional, and nothing is shared unless you choose to. <a href="#" id="review">Request a Strategic Reflection Review</a></p>
+</section>
+
+</main>
+
+<footer class="bar"><div class="wrap">
+  <a class="brand" href="https://mindanchor-jai.github.io/"><img src="Icon.png" alt="Mind Anchor logo"><span>Mind Anchor</span></a>
+  <nav aria-label="Footer">
+    <a href="https://mindanchor-jai.github.io/Articles/">Articles</a>
+    <a href="https://mindanchor-jai.github.io/Framework/">Framework Library</a>
+    <a href="https://mindanchor-jai.github.io/Forms/index.html">Weekly Workbooks</a>
+  </nav>
+  <div class="soc">
+    <a href="#" aria-label="LinkedIn"><svg><use href="#li"/></svg></a>
+    <a href="#" aria-label="Instagram"><svg><use href="#ig"/></svg></a>
+    <a href="#" aria-label="X"><svg><use href="#x"/></svg></a>
+    <a href="#" aria-label="YouTube"><svg><use href="#yt"/></svg></a>
+  </div>
+  <p class="fine">© Mind Anchor. This workbook is a tool for self-observation. It is not a test, a diagnosis or therapy, and your answers belong to you.</p>
+</div></footer>
+
+<script>
+const REVIEW_URL="#"; // set to the Strategic Reflection Review enquiry link
+const $=s=>document.querySelector(s), val=n=>{const e=document.querySelector(`input[name=${n}]:checked`);return e?e.value:""};
+const H={"":22,"Clear":34,"Narrowed":7,"Not sure":20};
+function draw(){
+  const h=["k1","k2","k3"].map(n=>H[val(n)]),m=60,X=[10,50,170,290,350],Y=[h[0],h[0],h[1],h[2],h[2]];
+  const t=X.map((x,i)=>x+","+(m-Y[i])).join(" L"),b=X.map((x,i)=>x+","+(m+Y[i])).reverse().join(" L");
+  $("#ch").setAttribute("d","M"+t+" L"+b+"Z");
+}
+document.querySelectorAll(".rt input").forEach(e=>e.onchange=draw);draw();
+$("#review").href=REVIEW_URL;
+function build(){
+  const L=[],add=(k,v)=>v&&v.trim()&&L.push(k+"\n"+v.trim());
+  add("The moment",$("#moment").value);
+  add("What someone watching would have assumed",$("#outside").value);
+  const r=[["Knowing it","k1"],["Trusting it","k2"],["Saying it","k3"]].filter(x=>val(x[1])).map(x=>x[0]+": "+val(x[1])).join("\n");add("The route",r);
+  add("What was present",[...document.querySelectorAll("#cond input:checked")].map(e=>e.value).join("; "));
+  add("What stands between what I know and what I say",$("#see").value);
+  return L.join("\n\n");
+}
+$("#finish").onclick=()=>{
+  const t=build(),a=$("#after");$("#mine").textContent=t||"You left it blank. That is a valid place to stop for now.";
+  a.classList.add("show");a.scrollIntoView({behavior:"smooth",block:"start"});
+};
+$("#pdf").onclick=()=>print();
+$("#copy").onclick=async()=>{
+  try{await navigator.clipboard.writeText(build());$("#copy").textContent="Copied";setTimeout(()=>$("#copy").textContent="Copy my reflection",1800)}
+  catch(e){$("#copy").textContent="Select the text above to copy"}
+};
+$("#again").onclick=()=>{
+  document.querySelectorAll("textarea").forEach(e=>e.value="");
+  document.querySelectorAll("input[type=radio],input[type=checkbox]").forEach(e=>e.checked=false);
+  draw();$("#after").classList.remove("show");scrollTo({top:0,behavior:"smooth"});
+};
+</script>
+</body>
+</html>
